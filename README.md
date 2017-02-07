@@ -30,6 +30,7 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 1. SSL always - No product will be ever launched with an http:// URL.
 2. Directory listings are turned off
 3. Always use the latest version of Apache, PHP etc. when starting off a new project and upgrade periodically.
+4. Disable directory listing
 
 ## Application security
 
@@ -64,7 +65,8 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 29. Testing servers should always be behind HTTP auth
 30. Users having admin right must use a secure password. The application should not allow weak passwords for admins (Minimum 10 characters, mix of lowercase, uppercase and digits)
 31. Disable autocomplete on form fields expected to contain sensitive information (Example: Secret answers, PAN number etc.)
-32. Set common security headers like X-Frame-Options, X-XSS-Protection etc.
+32. Never display code errors on production
+33. Set common security headers like X-Frame-Options, X-XSS-Protection etc.
 
 * X-Frame-Options: 'SAMEORIGIN' in Rails by default - allow framing on same domain. Set it to 'DENY' to deny framing at all or 'ALLOWALL' if you want to allow framing for all website.
 * X-XSS-Protection: '1; mode=block' in Rails by default - use XSS Auditor and block page if XSS attack is detected. Set it to '0;' if you want to switch XSS Auditor off(useful if response contents scripts from request parameters)
