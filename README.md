@@ -77,3 +77,7 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 
 ### Footnotes
 Further reading: https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf
+
+---
+#### SquareBoat builds awesome mobile and web applications for startups. We are based out of Gurgaon, India.
+---
