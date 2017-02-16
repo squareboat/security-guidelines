@@ -66,14 +66,19 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 30. Users having admin right must use a secure password. The application should not allow weak passwords for admins (Minimum 10 characters, mix of lowercase, uppercase and digits)
 31. Disable autocomplete on form fields expected to contain sensitive information (Example: Secret answers, PAN number etc.)
 32. Never display code errors on production
-33. Set common security headers like X-Frame-Options, X-XSS-Protection etc.
+33. Set common security headers like  Content Security Policy, X-Frame-Options, X-XSS-Protection etc.
 
-* X-Frame-Options: 'SAMEORIGIN' in Rails by default - allow framing on same domain. Set it to 'DENY' to deny framing at all or 'ALLOWALL' if you want to allow framing for all website.
-* X-XSS-Protection: '1; mode=block' in Rails by default - use XSS Auditor and block page if XSS attack is detected. Set it to '0;' if you want to switch XSS Auditor off(useful if response contents scripts from request parameters)
-* X-Content-Type-Options: 'nosniff' in Rails by default - stops the browser from guessing the MIME type of a file.
-* X-Content-Security-Policy: A powerful mechanism for controlling which sites certain content types can be loaded from
+* Content-Security-Policy: The new Content-Security-Policy HTTP response header helps you reduce XSS risks on modern browsers by declaring what dynamic resources are allowed to load via a HTTP Header
+
+* X-Frame-Options: 'SAMEORIGIN' - allow framing on same domain. Set it to 'DENY' to deny framing at all or 'ALLOWALL' if you want to allow framing for all website. Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites
+
+* X-XSS-Protection: Largely unnecessary in modern browsers when sites implement a strong Content-Security-Policy.
+
+* X-Content-Type-Options: 'nosniff' by default - stops the browser from guessing the MIME type of a file.
+
 * Access-Control-Allow-Origin: Used to control which sites are allowed to bypass same origin policies and send cross-origin requests.
-* Strict-Transport-Security: Used to control if the browser is allowed to only access a site over a secure connection
+
+* Strict-Transport-Security: Used to control if the browser is allowed to only access a site over a secure connection. Example: Strict-Transport-Security: max-age=31536000; includeSubDomains (All present and future subdomains will be HTTPS for a max-age of 1 year. This blocks access to pages or sub domains that can only be served over HTTP.)
 
 ### Footnotes
 Further reading: https://www.owasp.org/images/0/08/OWASP_SCP_Quick_Reference_Guide_v2.pdf
