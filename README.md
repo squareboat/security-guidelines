@@ -28,9 +28,8 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 ## Web Server security
 
 1. SSL always - No product will be ever launched with an http:// URL.
-2. Directory listings are turned off
-3. Always use the latest version of Apache, PHP etc. when starting off a new project and upgrade periodically.
-4. Disable directory listing
+2. Always use the latest version of Apache, PHP etc. when starting off a new project and upgrade periodically.
+3. Disable directory listing
 
 ## Application security
 
