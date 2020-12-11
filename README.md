@@ -37,7 +37,7 @@ At SquareBoat, we take mobile and web security seriously. Though we do understan
 2. CSRF tokens are a must for all form submissions and AJAX requests.
 3. Admin login page and user login pages must be separate. The admin login page must have a captcha.
 4. Send an email to the user whenever his password has changed
-5. Uploaded files must be scanned for virused and malware
+5. Uploaded files must be scanned for viruses and malware
 6. Prevent or restrict the uploading of any file that may be interpreted by the web server.
 7. Validate uploaded files are the expected type by checking file headers. Checking for file type by extension alone is not sufficient.
 8. Validate your redirects - Do not allow the user to supply (parts of) the URL to be redirected to.
